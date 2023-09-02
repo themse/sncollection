@@ -8,11 +8,11 @@ export const metadata: Metadata = {
 const WebLayout = ({ children }: PropsWithChildren) => {
 	return (
 		<div className="relative flex min-h-screen min-w-[320px] flex-col justify-between">
-			<header>Header</header>
+			{/* Header */}
 
 			<main className="flex-1">{children}</main>
 
-			<footer>Footer</footer>
+			{/* Footer */}
 		</div>
 	);
 };

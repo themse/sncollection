@@ -1,10 +1,8 @@
 import type { Metadata } from 'next';
 import { PropsWithChildren } from 'react';
-import { Inter } from 'next/font/google';
 
 import 'styles/globals.css';
-
-const inter = Inter({ subsets: ['latin'] });
+import { boxing, excon } from '@fonts';
 
 export const metadata: Metadata = {
 	title: 'Sneaker Collector',
@@ -14,8 +12,8 @@ export const metadata: Metadata = {
 
 const RootLayout = ({ children }: PropsWithChildren) => {
 	return (
-		<html lang="en">
-			<body className={inter.className}>{children}</body>
+		<html lang="en" className={`${boxing.variable} ${excon.variable}`}>
+			<body className="font-excon">{children}</body>
 		</html>
 	);
 };
