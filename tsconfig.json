@@ -23,7 +23,8 @@
 		"baseUrl": "src",
 		"paths": {
 			"@ui/*": ["components/ui/*"],
-			"@fonts": ["styles/fonts"]
+			"@fonts": ["styles/fonts"],
+			"@helpers/*": ["utils/helpers/*"]
 		}
 	},
 	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

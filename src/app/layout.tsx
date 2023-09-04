@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import { PropsWithChildren } from 'react';
 
-import 'styles/globals.css';
 import { boxing, excon } from '@fonts';
+import 'styles/globals.css';
 
 export const metadata: Metadata = {
 	title: 'Sneaker Collector',
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 const RootLayout = ({ children }: PropsWithChildren) => {
 	return (
 		<html lang="en" className={`${boxing.variable} ${excon.variable}`}>
-			<body className="font-excon">{children}</body>
+			<body className="font-excon text-black">{children}</body>
 		</html>
 	);
 };

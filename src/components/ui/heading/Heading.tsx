@@ -2,9 +2,9 @@ import { PropsWithChildren, HTMLAttributes } from 'react';
 import { cva, type VariantProps } from 'class-variance-authority';
 import { Slot } from '@radix-ui/react-slot';
 
-import { cn } from 'utils/helpers/cn';
+import { cn } from '@helpers/cn';
 
-const headingVariants = cva('text-black block text-base font-excon font-normal', {
+const headingVariants = cva('block text-base font-excon font-normal', {
 	variants: {
 		variant: {
 			'heading-1': 'font-boxing text-6xl leading-16',
