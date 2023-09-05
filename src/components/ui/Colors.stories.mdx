@@ -1,0 +1,48 @@
+import { Meta, ColorPalette, ColorItem, Source } from '@storybook/blocks';
+
+<Meta title="Style Guide/Palette" />
+
+# Color Palette
+
+<ColorPalette>
+	<ColorItem
+		title="Black"
+		subtitle="theme.colors.black"
+		colors={{ black: '#191919' }}
+	/>
+	<ColorItem
+		title="Gray"
+		subtitle="theme.colors.gray"
+		colors={{
+			400: '#373737',
+			300: '#808080',
+			200: '#CCCCCC',
+			100: '#EEEFF0',
+		}}
+	/>
+	<ColorItem 
+		title="White" 
+		subtitle="theme.colors.white" 
+		colors={{ white: '#FFFFFF' }} 
+	/>
+	<ColorItem 
+		title="Blue" 
+		subtitle="theme.colors.blue" 
+		colors={{ blue: '#20A9F3' }} 
+	/>
+	<ColorItem
+		title="Red"
+		subtitle="theme.colors.red"
+		colors={{
+			red: '#EF233C',
+		}}
+	/>
+</ColorPalette>
+
+# Usage
+
+<Source dark language="tsx" code={`
+const Example = () => {
+  return <div className="text-black bg-red border border-gray-400">Example</div>;
+};
+`} />
