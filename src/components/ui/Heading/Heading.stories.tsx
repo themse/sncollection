@@ -6,9 +6,6 @@ const meta = {
 	title: 'UI/Heading',
 	component: Heading,
 	tags: ['autodocs'],
-	parameters: {
-		layout: 'centered',
-	},
 } satisfies Meta<typeof Heading>;
 
 export default meta;

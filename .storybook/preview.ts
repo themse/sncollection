@@ -14,6 +14,7 @@ const preview: Preview = {
 				boolean: /^(has|is)[A-Z].*$/,
 			},
 		},
+		layout: 'centered',
 	},
 
 	decorators: [withFontLoaded],
