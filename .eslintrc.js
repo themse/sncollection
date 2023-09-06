@@ -5,4 +5,12 @@ module.exports = {
 		'no-console': ['warn', { allow: ['warn', 'error', 'info', 'table'] }],
 		'no-param-reassign': ['error', { props: true }],
 	},
+	overrides: [
+		{
+			files: ['src/types/**/*.d.ts'],
+			rules: {
+				'no-unused-vars': 'off',
+			},
+		},
+	],
 };

@@ -25,7 +25,9 @@
 			"@/*": ["./src/*"],
 			"@/ui/*": ["./src/components/ui/*"],
 			"@/fonts": ["./src/styles/fonts"],
-			"@/helpers/*": ["./src/utils/helpers/*"]
+			"@/helpers/*": ["./src/utils/helpers/*"],
+			"@/api/*": ["./src/services/api/*"],
+			"@/entities/*": ["./src/services/entities/*"]
 		}
 	},
 	"include": [
