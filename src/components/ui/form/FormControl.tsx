@@ -11,7 +11,7 @@ export const FormControl = ({
 	hideError = false,
 }: PropsWithChildren<FormControlProps>) => {
 	return (
-		<div className="flex flex-col gap-1">
+		<div className="flex flex-col gap-y-1">
 			{children}
 			{!hideError && <span className="text-sm leading-4 text-red">{errorMessage}</span>}
 		</div>

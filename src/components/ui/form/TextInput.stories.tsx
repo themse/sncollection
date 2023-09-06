@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { TextInput } from './TextInput';
+import { Icon } from '@/ui/Icon';
 
 const meta = {
 	title: 'UI/TextInput',
@@ -89,4 +90,23 @@ export const Alert: Story = {
 			value: 'alert',
 		},
 	},
+};
+
+export const Search: Story = {
+	args: {
+		formControl: {
+			errorMessage: '',
+		},
+		input: {
+			placeholder: 'Search',
+			className: 'pl-11',
+		},
+	},
+
+	render: (props) => (
+		<div className="relative flex items-center">
+			<Icon name="search" className="absolute left-3 text-gray-200" />
+			<TextInput {...props} />
+		</div>
+	),
 };
