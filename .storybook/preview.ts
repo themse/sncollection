@@ -1,6 +1,6 @@
 import { type Preview } from '@storybook/react';
 
-import 'styles/globals.css';
+import '@/styles/globals.css';
 import { withFontLoaded } from './decorators/withFontLoaded';
 
 const preview: Preview = {

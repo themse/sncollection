@@ -2,7 +2,7 @@ import dynamic from 'next/dynamic';
 import { LucideProps } from 'lucide-react';
 import dynamicIconImports from 'lucide-react/dynamicIconImports';
 
-import { Loader } from '@ui/Loader';
+import { Loader } from '@/ui/Loader';
 
 interface IconProps extends LucideProps {
 	name: keyof typeof dynamicIconImports;

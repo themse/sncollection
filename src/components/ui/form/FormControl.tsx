@@ -13,7 +13,7 @@ export const FormControl = ({
 	return (
 		<div className="flex flex-col gap-1">
 			{children}
-			{!hideError && <span className="text-red text-sm leading-4">{errorMessage}</span>}
+			{!hideError && <span className="text-sm leading-4 text-red">{errorMessage}</span>}
 		</div>
 	);
 };

@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import { PropsWithChildren } from 'react';
 
-import { boxing, excon } from '@fonts';
-import 'styles/globals.css';
+import { boxing, excon } from '@/fonts';
+import '@/styles/globals.css';
 
 export const metadata: Metadata = {
 	title: 'Sneaker Collector',

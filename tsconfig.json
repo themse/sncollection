@@ -1,6 +1,6 @@
 {
 	"compilerOptions": {
-		"target": "es5",
+		"target": "es6",
 		"lib": ["dom", "dom.iterable", "esnext"],
 		"allowJs": false,
 		"skipLibCheck": true,
@@ -20,11 +20,12 @@
 				"name": "next"
 			}
 		],
-		"baseUrl": "src",
+		"baseUrl": ".",
 		"paths": {
-			"@ui/*": ["components/ui/*"],
-			"@fonts": ["styles/fonts"],
-			"@helpers/*": ["utils/helpers/*"]
+			"@/*": ["./src/*"],
+			"@/ui/*": ["./src/components/ui/*"],
+			"@/fonts": ["./src/styles/fonts"],
+			"@/helpers/*": ["./src/utils/helpers/*"]
 		}
 	},
 	"include": [

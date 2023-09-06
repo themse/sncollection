@@ -1,7 +1,7 @@
-import { Card, CardHeader, CardContent } from '@ui/Card';
-import { Heading } from '@ui/Heading';
-import { Icon } from '@ui/Icon';
-import { cn } from '@helpers/cn';
+import { Card, CardHeader, CardContent } from '@/ui/Card';
+import { Heading } from '@/ui/Heading';
+import { Icon } from '@/ui/Icon';
+import { cn } from '@/helpers/cn';
 
 interface ProductCard {
 	title: string;

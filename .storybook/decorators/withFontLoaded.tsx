@@ -1,6 +1,6 @@
 import { type Decorator } from '@storybook/react';
 
-import { boxing, excon } from '@fonts';
+import { boxing, excon } from '@/fonts';
 
 export const withFontLoaded: Decorator = (Story) => (
 	<div className={`${boxing.variable} ${excon.variable}`}>

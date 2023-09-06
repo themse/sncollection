@@ -5,11 +5,7 @@ import { Meta, ColorPalette, ColorItem, Source } from '@storybook/blocks';
 # Color Palette
 
 <ColorPalette>
-	<ColorItem
-		title="Black"
-		subtitle="theme.colors.black"
-		colors={{ black: '#191919' }}
-	/>
+	<ColorItem title="Black" subtitle="theme.colors.black" colors={{ black: '#191919' }} />
 	<ColorItem
 		title="Gray"
 		subtitle="theme.colors.gray"
@@ -20,18 +16,14 @@ import { Meta, ColorPalette, ColorItem, Source } from '@storybook/blocks';
 			100: '#EEEFF0',
 		}}
 	/>
-	<ColorItem 
-		title="White" 
-		subtitle="theme.colors.white" 
-		colors={{ white: '#FFFFFF' }} 
-	/>
-	<ColorItem 
-		title="Blue" 
-		subtitle="theme.colors.blue" 
-		colors={{ 
-			'light': '#20A9F3',
-			'dark': '#061F6A',
-		}} 
+	<ColorItem title="White" subtitle="theme.colors.white" colors={{ white: '#FFFFFF' }} />
+	<ColorItem
+		title="Blue"
+		subtitle="theme.colors.blue"
+		colors={{
+			light: '#20A9F3',
+			dark: '#061F6A',
+		}}
 	/>
 	<ColorItem
 		title="Red"
@@ -44,8 +36,12 @@ import { Meta, ColorPalette, ColorItem, Source } from '@storybook/blocks';
 
 # Usage
 
-<Source dark language="tsx" code={`
+<Source
+	dark
+	language="tsx"
+	code={`
 const Example = () => {
   return <div className="text-black bg-red border border-gray-400">Example</div>;
 };
-`} />
+`}
+/>
