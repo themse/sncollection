@@ -2,6 +2,7 @@ import { Card, CardHeader, CardContent } from '@/ui/Card';
 import { Heading } from '@/ui/Heading';
 import { Icon } from '@/ui/Icon';
 import { cn } from '@/helpers/cn';
+import { DrawerTrigger } from '@/ui/Drawer';
 
 interface ProductCard {
 	title: string;
@@ -17,14 +18,16 @@ export const ProductCard = ({ title, brand, attributes }: ProductCard) => {
 	return (
 		<Card>
 			<CardHeader>
-				<div className="flex w-full justify-between">
+				<div className="flex w-full items-start justify-between">
 					<div className="space-y-2">
 						<Heading variant="heading-3" as="h3">
 							{title}
 						</Heading>
 						<p className="leading-6">{brand}</p>
 					</div>
-					<Icon name="trash-2" />
+					<DrawerTrigger>
+						<Icon name="trash-2" />
+					</DrawerTrigger>
 				</div>
 			</CardHeader>
 			<CardContent className="grid grid-cols-3 gap-y-5">

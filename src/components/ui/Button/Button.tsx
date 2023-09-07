@@ -6,7 +6,7 @@ import { cn } from '@/utils/helpers/cn';
 
 const buttonVariants = cva(
 	[
-		'inline-flex items-center justify-center',
+		'inline-flex items-center justify-center h-fit',
 		'font-medium',
 		'rounded-xl outline-blue outline-4 outline-offset-1',
 		'disabled:pointer-events-none',
