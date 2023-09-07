@@ -8,7 +8,7 @@ const Card = forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivElement>>(
 			ref={ref}
 			className={cn(
 				'flex min-h-[186px] w-fit min-w-[424px] flex-col justify-between gap-6 p-6',
-				'shadow-blue-dark/5 rounded-xl shadow-[0_3px_5px_5px]',
+				'rounded-xl shadow-[0_3px_5px_5px] shadow-blue-dark/5',
 				'border-transparent border hover:border-black',
 				className,
 			)}

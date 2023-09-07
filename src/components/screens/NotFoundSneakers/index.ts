@@ -1,0 +1,1 @@
+export { NotFoundSneakers } from './NotFoundSneakers';

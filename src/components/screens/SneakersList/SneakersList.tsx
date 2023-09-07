@@ -1,5 +1,5 @@
 import { ProductCard } from '@/components/ProductCard';
-import { SortingPanel } from '../SortingPanel';
+import { SortingPanel } from '../../SortingPanel';
 
 export const SneakersList = () => {
 	return (
