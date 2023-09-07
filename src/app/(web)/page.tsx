@@ -1,30 +1,7 @@
-import { ProductCard } from '@/components/ProductCard';
+import { redirect } from 'next/navigation';
 
 const HomePage = () => {
-	return (
-		<div>
-			<ProductCard
-				{...{
-					title: 'Air jordan',
-					brand: 'Nike',
-					attributes: [
-						{
-							label: 'Year',
-							value: '2023',
-						},
-						{
-							label: 'Size',
-							value: '11US',
-						},
-						{
-							label: 'Price',
-							value: '$230',
-						},
-					],
-				}}
-			/>
-		</div>
-	);
+	redirect('/create');
 };
 
 export default HomePage;

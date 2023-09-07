@@ -13,7 +13,7 @@ const config: Config = {
 			md: '768px',
 			lg: '992px',
 			xl: '1200px',
-			'2xl': { max: '1512px' },
+			'2xl': '1312px',
 			'3xl': '1512px',
 		},
 		colors: {

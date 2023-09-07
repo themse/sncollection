@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 const RootLayout = ({ children }: PropsWithChildren) => {
 	return (
 		<html lang="en" className={`${boxing.variable} ${excon.variable}`}>
-			<body className="font-excon text-black">{children}</body>
+			<body className="bg-gray-100 font-excon text-black">{children}</body>
 		</html>
 	);
 };
