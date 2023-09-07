@@ -35,6 +35,13 @@ export const Secondary: Story = {
 	},
 };
 
+export const Danger: Story = {
+	args: {
+		children: 'Danger',
+		variant: 'danger',
+	},
+};
+
 export const FullWidth: Story = {
 	args: {
 		children: 'Primary With FullWidth',

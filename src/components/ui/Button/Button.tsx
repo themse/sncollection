@@ -9,23 +9,20 @@ const buttonVariants = cva(
 		'inline-flex items-center justify-center h-fit',
 		'font-medium',
 		'rounded-xl outline-blue outline-4 outline-offset-1',
-		'disabled:pointer-events-none',
+		'disabled:pointer-events-none disabled:bg-gray-200 disabled:text-gray-300',
 		'active:bg-red',
 	],
 	{
 		variants: {
 			variant: {
-				primary: [
-					'bg-black px-8 py-3 text-white',
-					'hover:bg-black/80',
-					'disabled:bg-gray-200 disabled:text-gray-300',
-				],
+				primary: ['bg-black px-8 py-3 text-white', 'hover:bg-black/80'],
 				secondary: [
 					'border border-black px-3.5 py-0.5',
 					'hover:border-gray-400 hover:text-gray-400',
 					'disabled:border-gray-300 disabled:text-gray-300',
 					'active:border-red active:text-white',
 				],
+				danger: ['bg-red px-8 py-3 text-white', 'hover:bg-red/80'],
 			},
 			isActive: {
 				true: 'bg-red border-red hover:border-red/50 text-white hover:text-white',
