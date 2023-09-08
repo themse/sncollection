@@ -1,7 +1,12 @@
 import { type Preview } from '@storybook/react';
 
 import '@/styles/globals.css';
-import { withFontLoaded, withDrawer, withCurrentSneakersProvider } from './decorators';
+import {
+	withFontLoaded,
+	withDrawer,
+	withCurrentSneakersProvider,
+	withAllSneakersProvider,
+} from './decorators';
 
 const preview: Preview = {
 	parameters: {
@@ -22,7 +27,7 @@ const preview: Preview = {
 		},
 	},
 
-	decorators: [withFontLoaded, withDrawer, withCurrentSneakersProvider],
+	decorators: [withFontLoaded, withDrawer, withCurrentSneakersProvider, withAllSneakersProvider],
 };
 
 export default preview;

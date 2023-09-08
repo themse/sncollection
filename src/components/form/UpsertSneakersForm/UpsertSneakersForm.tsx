@@ -12,20 +12,24 @@ import * as CrudCrudApi from '@/api/crudCrud';
 import { sneakersFormInputList } from '@/utils/consts';
 import { useDrawer } from '@/context/DrawerContext';
 import { useCurrentSneakers } from '@/context/CurrentSneakersContext';
+import { useAllSneakers } from '@/context/AllSneakersContext';
 
 type FormValues = SneakerEntity;
 
 export const UpsertSneakersForm = () => {
 	const { onCloseDrawer } = useDrawer();
 	const { currentSneakers, resetCurrentSneakers } = useCurrentSneakers();
+	const { addSneakersItem, onDeleteSneakersItem, onUpdateSneakersItem } = useAllSneakers();
 
 	const onSubmit = async (formData: FormValues, _formApi: FormProps<FormValues>['form']) => {
 		const { _id, ...dto } = formData;
 
 		if (_id) {
-			await CrudCrudApi.updateSneaker(_id, dto);
+			const updatedSneakers = await CrudCrudApi.updateSneaker(_id, dto);
+			onUpdateSneakersItem(updatedSneakers);
 		} else {
-			await CrudCrudApi.addNewSneaker(dto);
+			const createdSneakers = await CrudCrudApi.addNewSneaker(dto);
+			addSneakersItem(createdSneakers);
 		}
 
 		resetCurrentSneakers();
@@ -48,6 +52,7 @@ export const UpsertSneakersForm = () => {
 		await CrudCrudApi.deleteSneaker(id);
 
 		resetCurrentSneakers();
+		onDeleteSneakersItem(id);
 		onCloseDrawer();
 	};
 

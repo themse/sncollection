@@ -2,6 +2,7 @@
 import axios from 'axios';
 
 import { SneakerEntity } from '@/services/entities/Sneaker';
+import { mockedSneakersForStory } from '@/utils/consts';
 
 const request = axios.create({
 	baseURL: `https://crudcrud.com/api/${process.env.NEXT_PUBLIC_CRUDCRUD_API_KEY}`,
@@ -11,9 +12,13 @@ const request = axios.create({
 const sneakersPath = 'sneakers';
 
 export const getAllSneakers = async (): Promise<SneakerEntity[]> => {
-	const { data } = await request.get<SneakerEntity[]>(`/${sneakersPath}`);
+	try {
+		const { data } = await request.get<SneakerEntity[]>(`/${sneakersPath}`);
 
-	return data;
+		return data;
+	} catch (err) {
+		return mockedSneakersForStory;
+	}
 };
 
 const getSneakerById = async (id: string): Promise<SneakerEntity> => {
