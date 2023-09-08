@@ -6,6 +6,9 @@ const meta = {
 	title: 'UI/Card',
 	component: Card,
 	tags: ['autodocs'],
+	parameters: {
+		layout: 'padded',
+	},
 } satisfies Meta<typeof Card>;
 
 export default meta;

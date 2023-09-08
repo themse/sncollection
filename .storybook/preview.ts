@@ -15,6 +15,11 @@ const preview: Preview = {
 			},
 		},
 		layout: 'centered',
+		options: {
+			storySort: {
+				order: ['Style Guide', 'UI', 'Components', 'Screens'],
+			},
+		},
 	},
 
 	decorators: [withFontLoaded, withDrawer],

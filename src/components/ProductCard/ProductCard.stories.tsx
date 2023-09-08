@@ -6,6 +6,9 @@ const meta = {
 	title: 'Components/ProductCard',
 	component: ProductCard,
 	tags: ['autodocs'],
+	parameters: {
+		layout: 'padded',
+	},
 } satisfies Meta<typeof ProductCard>;
 
 export default meta;
