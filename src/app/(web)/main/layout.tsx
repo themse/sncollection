@@ -24,12 +24,15 @@ const MainLayout = ({ children }: PropsWithChildren) => {
 	return (
 		<Drawer>
 			<Container>
-				<header className="my-16 flex justify-between gap-x-4">
+				<header className="my-16 flex flex-col items-center gap-4 md:items-start md:justify-between lg:flex-row">
 					<Heading>Your collection</Heading>
 					<div className="flex items-center gap-x-4">
 						<SearchInput />
 						<DrawerTrigger asChild>
-							<Button variant="primary" className="h-fit w-max">
+							<Button
+								variant="primary"
+								className="fixed bottom-8 left-0 right-0 mx-auto h-fit w-11/12 whitespace-nowrap md:static md:w-max"
+							>
 								<Icon name="plus" className="mr-2" />
 								Add new sneakers
 							</Button>
