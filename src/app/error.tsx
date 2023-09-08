@@ -1,5 +1,9 @@
 'use client';
 
+import { Heading } from '@/ui/Heading';
+import { Button } from '@/ui/Button';
+import { Container } from '@/components/Container';
+
 type Props = {
 	error: Error;
 	reset: () => void;
@@ -7,14 +11,14 @@ type Props = {
 
 const Error = ({ error, reset }: Props) => {
 	return (
-		<div>
-			<p>
+		<Container>
+			<Heading>
 				Error - {error.name} {error.message}
-			</p>
-			<button type="button" onClick={reset}>
+			</Heading>
+			<Button type="button" onClick={reset}>
 				Try again
-			</button>
-		</div>
+			</Button>
+		</Container>
 	);
 };
 

@@ -6,7 +6,7 @@ import { FormControl, type FormControlProps } from './FormControl';
 import { Label, type LabelProps } from './Label';
 import { Input, type InputProps } from './Input';
 
-interface TextInputProps {
+export interface TextInputProps {
 	formControl: FormControlProps;
 	input: InputProps;
 	label?: LabelProps & { value: string };

@@ -21,11 +21,14 @@
 		"axios": "^1.5.0",
 		"class-variance-authority": "^0.7.0",
 		"clsx": "^2.0.0",
+		"final-form": "^4.20.10",
 		"lucide-react": "^0.274.0",
 		"next": "13.4.19",
 		"react": "18.2.0",
 		"react-dom": "18.2.0",
-		"tailwindcss-animate": "^1.0.7"
+		"react-final-form": "^6.5.9",
+		"tailwindcss-animate": "^1.0.7",
+		"yup": "^1.2.0"
 	},
 	"devDependencies": {
 		"@storybook/addon-essentials": "^7.4.0",

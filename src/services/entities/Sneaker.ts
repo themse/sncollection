@@ -1,8 +1,8 @@
-import { Product } from './Product';
-
-export interface Sneaker extends Product {
+export interface SneakerEntity {
+	name: string;
+	price: number;
 	brand: string;
 	size: number;
 	year: number;
-	_id: string;
+	_id?: string;
 }

@@ -32,6 +32,7 @@ const MainLayout = ({ children }: PropsWithChildren) => {
 						<SearchInput wrapperClassnames="w-full md:w-fit" className="w-full md:w-fit" />
 						<DrawerTrigger asChild>
 							<Button
+								type="button"
 								variant="primary"
 								className="fixed bottom-8 left-0 right-0 mx-auto h-fit w-11/12 whitespace-nowrap md:static md:w-max"
 							>
