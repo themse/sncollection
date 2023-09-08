@@ -8,35 +8,25 @@ import { Button } from '@/components/ui/Button';
 import { Icon } from '@/ui/Icon';
 import { SneakerEntity } from '@/services/entities/Sneaker';
 import { validateForm } from '@/helpers/validateForm';
-
-const formInputList = [
-	{
-		name: 'name',
-		label: 'Name',
-	},
-	{
-		name: 'brand',
-		label: 'Brand',
-	},
-	{
-		name: 'price',
-		label: 'Price',
-	},
-	{
-		name: 'size',
-		label: 'Size',
-	},
-	{
-		name: 'year',
-		label: 'Year',
-	},
-];
+import * as CrudCrudApi from '@/api/crudCrud';
+import { sneakersFormInputList } from '@/utils/consts';
+import { useDrawer } from '@/context/DrawerContext';
 
 type FormValues = SneakerEntity;
 
 export const UpsertSneakersForm = () => {
+	const { onCloseDrawer } = useDrawer();
+
 	const onSubmit = async (formData: FormValues, _formApi: FormProps<FormValues>['form']) => {
-		console.log({ formData }); // TODO
+		const { _id, ...dto } = formData;
+
+		if (_id) {
+			await CrudCrudApi.updateSneaker(_id, dto);
+		} else {
+			await CrudCrudApi.addNewSneaker(dto);
+		}
+
+		onCloseDrawer();
 	};
 
 	const getValidationRules = async (values: FormValues) => {
@@ -51,6 +41,12 @@ export const UpsertSneakersForm = () => {
 		return validateForm(schema, values);
 	};
 
+	const onDelete = async (id: string) => {
+		await CrudCrudApi.deleteSneaker(id);
+
+		onCloseDrawer();
+	};
+
 	return (
 		<Form<FormValues>
 			onSubmit={onSubmit}
@@ -59,7 +55,7 @@ export const UpsertSneakersForm = () => {
 				<form onSubmit={handleSubmit}>
 					<div className="space-y-10">
 						<div className="space-y-5">
-							{formInputList.map((formInput) => (
+							{sneakersFormInputList.map((formInput) => (
 								<FormInput
 									key={formInput.name}
 									input={{
@@ -84,6 +80,8 @@ export const UpsertSneakersForm = () => {
 								Save
 							</Button>
 							<Button
+								// TODO
+								onClick={() => onDelete('id')}
 								type="button"
 								variant="danger"
 								className="h-fit"
