@@ -32,7 +32,11 @@ const DrawerOverlay = forwardRef<
 DrawerOverlay.displayName = DrawerPrimitive.Overlay.displayName;
 
 const drawerVariants = cva(
-	'fixed z-50 gap-4 bg-white px-12 py-16 shadow-lg transition ease-in-out data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:duration-300 data-[state=open]:duration-500',
+	[
+		'fixed z-50 gap-4 overflow-auto px-4 py-6 sm:px-12 sm:py-16',
+		'bg-white shadow-lg',
+		'transition ease-in-out data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:duration-300 data-[state=open]:duration-500',
+	],
 	{
 		variants: {
 			side: {
@@ -41,7 +45,7 @@ const drawerVariants = cva(
 					'inset-x-0 bottom-0 border-t data-[state=closed]:slide-out-to-bottom data-[state=open]:slide-in-from-bottom',
 				left: 'inset-y-0 left-0 h-full w-[524px] border-r data-[state=closed]:slide-out-to-left data-[state=open]:slide-in-from-left',
 				right:
-					'inset-y-0 right-0 h-full w-[524px] border-l data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right',
+					'inset-y-0 right-0 h-full sm:w-11/12 md:w-[524px] border-l data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right',
 			},
 		},
 		defaultVariants: {

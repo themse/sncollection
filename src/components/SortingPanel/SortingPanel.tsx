@@ -4,10 +4,10 @@ import { Icon } from '@/ui/Icon';
 
 export const SortingPanel = () => {
 	return (
-		<div className="flex items-center justify-end gap-4">
+		<div className="flex flex-col items-center justify-end gap-4 whitespace-nowrap md:flex-row">
 			<Text variant="secondary">Sort by:</Text>
 
-			<div className="flex gap-2">
+			<div className="flex flex-wrap justify-center gap-2">
 				<Button variant="secondary" isActive>
 					<Icon className="mr-2 h-4 w-4" name="calendar" />
 					Oldest Year

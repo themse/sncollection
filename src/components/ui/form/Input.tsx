@@ -7,7 +7,7 @@ import { cn } from '@/helpers/cn';
 
 const inputVariants = cva(
 	[
-		'outline-blue flex h-12 min-w-[295px] w-fit rounded-lg border border-gray-200 px-4 py-3 outline-2 placeholder:text-gray-200',
+		'outline-blue flex h-12 min-w-[280px] w-fit rounded-lg border border-gray-200 px-4 py-3 outline-2 placeholder:text-gray-200',
 		'hover:border-gray-400',
 		'active:border-2 active:border-black active:outline-none',
 		'disabled:cursor-not-allowed disabled:opacity-50',

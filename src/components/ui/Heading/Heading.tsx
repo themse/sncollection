@@ -7,8 +7,7 @@ import { cn } from '@/helpers/cn';
 const headingVariants = cva('block text-base font-excon font-normal', {
 	variants: {
 		variant: {
-			'heading-1':
-				'leading-6 sm:leading-12 font-boxing text-4xl sm:text-5xl xl:text-6xl xl:leading-16',
+			'heading-1': 'font-boxing text-6xl leading-16',
 			'heading-2': 'font-boxing text-4xl leading-9',
 			'heading-3': 'text-2xl font-bold leading-8',
 			subheading: 'font-bold leading-6',
