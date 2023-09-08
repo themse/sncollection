@@ -10,6 +10,12 @@ SN Collection is a mini store. The project utilizes popular technologies such as
 
 ### `https://sncollection-sb.vercel.app/`
 
+## Still WIP Features
+
+- Search (created a separate temporary page `http://localhost:3000/not-found`, will be removed after search implementation)
+- Filters
+- Caching External API CrudCrud (The API lacks reliability and has severe limitations on the number of requests it can handle.)
+
 ## Getting Started
 
 Run the project using the following steps:
