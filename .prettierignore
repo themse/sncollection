@@ -2,6 +2,7 @@
 **/public
 **/build
 **/.next
+**/storybook-static
 
 *-lock.*
 yarn.lock
