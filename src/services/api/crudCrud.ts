@@ -43,7 +43,7 @@ export const updateSneaker = async (
 		throw new Error(`Sneakers with id ${id} not found`);
 	}
 
-	const { data } = await request.post<SneakerEntity>(`/${sneakersPath}/${id}`, dto);
+	const { data } = await request.put<SneakerEntity>(`/${sneakersPath}/${id}`, dto);
 
 	return data;
 };

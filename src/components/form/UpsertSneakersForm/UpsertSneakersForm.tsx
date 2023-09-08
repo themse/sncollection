@@ -5,17 +5,19 @@ import * as Yup from 'yup';
 
 import { FormInput } from '@/components/form/FormInput';
 import { Button } from '@/components/ui/Button';
-import { Icon } from '@/ui/Icon';
+import { PlusIcon, TrashIcon } from '@/ui/Icon';
 import { SneakerEntity } from '@/services/entities/Sneaker';
 import { validateForm } from '@/helpers/validateForm';
 import * as CrudCrudApi from '@/api/crudCrud';
 import { sneakersFormInputList } from '@/utils/consts';
 import { useDrawer } from '@/context/DrawerContext';
+import { useCurrentSneakers } from '@/context/CurrentSneakersContext';
 
 type FormValues = SneakerEntity;
 
 export const UpsertSneakersForm = () => {
 	const { onCloseDrawer } = useDrawer();
+	const { currentSneakers, resetCurrentSneakers } = useCurrentSneakers();
 
 	const onSubmit = async (formData: FormValues, _formApi: FormProps<FormValues>['form']) => {
 		const { _id, ...dto } = formData;
@@ -26,6 +28,7 @@ export const UpsertSneakersForm = () => {
 			await CrudCrudApi.addNewSneaker(dto);
 		}
 
+		resetCurrentSneakers();
 		onCloseDrawer();
 	};
 
@@ -44,11 +47,13 @@ export const UpsertSneakersForm = () => {
 	const onDelete = async (id: string) => {
 		await CrudCrudApi.deleteSneaker(id);
 
+		resetCurrentSneakers();
 		onCloseDrawer();
 	};
 
 	return (
 		<Form<FormValues>
+			initialValues={currentSneakers ?? undefined}
 			onSubmit={onSubmit}
 			validate={getValidationRules}
 			render={({ handleSubmit, submitting, pristine }) => (
@@ -68,40 +73,48 @@ export const UpsertSneakersForm = () => {
 									}}
 								/>
 							))}
+							<FormInput
+								input={{
+									name: '_id',
+									type: 'hidden',
+								}}
+							/>
 						</div>
-						<div className="space-y-3">
+						{currentSneakers?._id ? (
+							<div className="space-y-3">
+								<Button
+									type="submit"
+									variant="primary"
+									className="h-fit"
+									fullWidth
+									disabled={submitting || pristine}
+								>
+									Save
+								</Button>
+								<Button
+									onClick={() => onDelete(currentSneakers._id!)}
+									type="button"
+									variant="danger"
+									className="h-fit"
+									fullWidth
+									disabled={submitting}
+								>
+									<TrashIcon className="mr-2" />
+									Delete
+								</Button>
+							</div>
+						) : (
 							<Button
 								type="submit"
 								variant="primary"
 								className="h-fit"
 								fullWidth
-								disabled={submitting || pristine}
-							>
-								Save
-							</Button>
-							<Button
-								// TODO
-								onClick={() => onDelete('id')}
-								type="button"
-								variant="danger"
-								className="h-fit"
-								fullWidth
 								disabled={submitting}
 							>
-								<Icon name="trash-2" className="mr-2" />
-								Delete
+								<PlusIcon className="mr-2" />
+								Add new sneakers
 							</Button>
-						</div>
-						<Button
-							type="submit"
-							variant="primary"
-							className="h-fit"
-							fullWidth
-							disabled={submitting}
-						>
-							<Icon name="plus" className="mr-2" />
-							Add new sneakers
-						</Button>
+						)}
 					</div>
 				</form>
 			)}

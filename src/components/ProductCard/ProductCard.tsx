@@ -12,9 +12,11 @@ interface ProductCard {
 		label: string;
 		value: string;
 	}[];
+
+	onClick?: () => void;
 }
 
-export const ProductCard = ({ title, brand, attributes }: ProductCard) => {
+export const ProductCard = ({ title, brand, attributes, onClick }: ProductCard) => {
 	return (
 		<Card>
 			<CardHeader>
@@ -25,7 +27,7 @@ export const ProductCard = ({ title, brand, attributes }: ProductCard) => {
 						</Heading>
 						<p className="leading-6">{brand}</p>
 					</div>
-					<DrawerTrigger>
+					<DrawerTrigger onClick={onClick}>
 						<Icon name="trash-2" />
 					</DrawerTrigger>
 				</div>

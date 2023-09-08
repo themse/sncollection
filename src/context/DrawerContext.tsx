@@ -5,7 +5,7 @@ import { createContext, PropsWithChildren, useContext, useState } from 'react';
 import { Drawer, DrawerClose, DrawerContent, DrawerTitle, DrawerDescription } from '@/ui/Drawer';
 import { UpsertSneakersForm } from '@/components/form/UpsertSneakersForm';
 import { Heading } from '@/components/ui/Heading';
-import { Icon } from '@/ui/Icon';
+import { CloseIcon } from '@/ui/Icon';
 
 type State = {
 	isOpenDrawer: boolean;
@@ -31,7 +31,7 @@ export const DrawerProvider = ({ children }: PropsWithChildren) => {
 								Add sneakers to your collection
 							</Heading>
 							<DrawerClose>
-								<Icon name="x" className="h-6 w-6 text-gray-400" />
+								<CloseIcon className="h-6 w-6 text-gray-400" />
 								<span className="sr-only">Close</span>
 							</DrawerClose>
 						</div>
