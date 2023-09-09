@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Button } from './Button';
-import { Icon } from '@/ui/Icon';
+import { PlusIcon } from '@/ui/Icon';
 
 const meta = {
 	title: 'UI/Button',
@@ -57,7 +57,7 @@ export const WithIcon: Story = {
 	render: (props) => {
 		return (
 			<Button variant="primary" {...props}>
-				<Icon name="plus" className="mr-2" />
+				<PlusIcon className="mr-2" />
 				Add new sneakers
 			</Button>
 		);

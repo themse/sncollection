@@ -1,4 +1,4 @@
-export { Icon } from './Icon';
+export { DynamicIcon } from './DynamicIcon';
 export {
 	Plus as PlusIcon,
 	X as CloseIcon,

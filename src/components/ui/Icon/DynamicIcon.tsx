@@ -4,11 +4,11 @@ import dynamicIconImports from 'lucide-react/dynamicIconImports';
 
 import { Loader } from '@/ui/Loader';
 
-interface IconProps extends LucideProps {
+interface DynamicIconProps extends LucideProps {
 	name: keyof typeof dynamicIconImports;
 }
 
-export const Icon = ({ name, ...props }: IconProps) => {
+export const DynamicIcon = ({ name, ...props }: DynamicIconProps) => {
 	const LucideIcon = dynamic(dynamicIconImports[name], {
 		loading: () => <Loader />,
 	});
@@ -16,4 +16,4 @@ export const Icon = ({ name, ...props }: IconProps) => {
 	return <LucideIcon {...props} />;
 };
 
-Icon.display = 'Icon';
+DynamicIcon.display = 'DynamicIcon';

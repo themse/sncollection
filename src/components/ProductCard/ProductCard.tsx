@@ -1,6 +1,6 @@
 import { Card, CardHeader, CardContent } from '@/ui/Card';
 import { Heading } from '@/ui/Heading';
-import { Icon } from '@/ui/Icon';
+import { TrashIcon } from '@/ui/Icon';
 import { cn } from '@/helpers/cn';
 import { DrawerTrigger } from '@/ui/Drawer';
 
@@ -28,7 +28,7 @@ export const ProductCard = ({ title, brand, attributes, onClick }: ProductCard) 
 						<p className="leading-6">{brand}</p>
 					</div>
 					<DrawerTrigger onClick={onClick}>
-						<Icon name="trash-2" />
+						<TrashIcon />
 					</DrawerTrigger>
 				</div>
 			</CardHeader>

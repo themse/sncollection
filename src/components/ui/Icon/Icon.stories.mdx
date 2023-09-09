@@ -1,6 +1,6 @@
 import { Meta, Typeset, IconGallery, IconItem, Source } from '@storybook/blocks';
 
-import { Icon } from './Icon';
+import { DynamicIcon } from './DynamicIcon';
 
 <Meta title="Style Guide/Icons" />
 
@@ -8,41 +8,41 @@ import { Icon } from './Icon';
 
 <IconGallery>
 	<IconItem name="plus">
-		<Icon name="plus" />
+		<DynamicIcon name="plus" />
 	</IconItem>
 	<IconItem name="x">
-		<Icon name="x" />
+		<DynamicIcon name="x" />
 	</IconItem>
 	<IconItem name="trash-2">
-		<Icon name="trash-2" />
+		<DynamicIcon name="trash-2" />
 	</IconItem>
 	<IconItem name="search">
-		<Icon name="search" />
+		<DynamicIcon name="search" />
 	</IconItem>
 	<IconItem name="chevron-down">
-		<Icon name="chevron-down" />
+		<DynamicIcon name="chevron-down" />
 	</IconItem>
 	<IconItem name="chevron-up">
-		<Icon name="chevron-up" />
+		<DynamicIcon name="chevron-up" />
 	</IconItem>
 	<IconItem name="chevron-left">
-		<Icon name="chevron-left" />
+		<DynamicIcon name="chevron-left" />
 	</IconItem>
 	<IconItem name="chevron-right">
-		<Icon name="chevron-right" />
+		<DynamicIcon name="chevron-right" />
 	</IconItem>
 	<IconItem name="calendar">
-		<Icon name="calendar" />
+		<DynamicIcon name="calendar" />
 	</IconItem>
 	<IconItem name="dollar-sign">
-		<Icon name="dollar-sign" />
+		<DynamicIcon name="dollar-sign" />
 	</IconItem>
 </IconGallery>
 
 # Usage
 
 <Source dark language="tsx" code={`
-import { Icon } from '@ui/Icon';
+import { DynamicIcon } from '@ui/Icon';
 //or
 export {
 	Plus as PlusIcon,
@@ -58,7 +58,12 @@ export {
 } from '@ui/Icon';
 
 const Example = () => {
-// 'plus' | 'x' | 'trash-2' | 'search' | etc
-return <Icon name="plus" />;
+	return (
+		<>
+			// 'plus' | 'x' | 'trash-2' | 'search' | etc
+			<DynamicIcon name="plus" />
+			<PlusIcon />
+		</>
+	);
 };
 `} />

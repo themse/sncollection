@@ -32,7 +32,7 @@ export const DrawerProvider = ({ children }: PropsWithChildren) => {
 							</Heading>
 							<DrawerClose>
 								<CloseIcon className="h-6 w-6 text-gray-400" />
-								<span className="sr-only">Close</span>
+								<span className="sr-only hidden">Close</span>
 							</DrawerClose>
 						</div>
 					</DrawerTitle>

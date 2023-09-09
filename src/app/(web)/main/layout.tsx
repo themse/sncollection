@@ -33,7 +33,7 @@ const MainLayout = ({ children }: PropsWithChildren) => {
 										variant="primary"
 										className="fixed bottom-8 left-0 right-0 mx-auto h-fit w-11/12 whitespace-nowrap md:static md:w-max"
 									>
-										<PlusIcon name="plus" className="mr-2" />
+										<PlusIcon className="mr-2" />
 										Add new sneakers
 									</Button>
 								</DrawerTrigger>
