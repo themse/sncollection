@@ -27,7 +27,8 @@
 			"@/fonts": ["./src/styles/fonts"],
 			"@/helpers/*": ["./src/utils/helpers/*"],
 			"@/api/*": ["./src/services/api/*"],
-			"@/entities/*": ["./src/services/entities/*"]
+			"@/entities/*": ["./src/services/entities/*"],
+			"@/dbClient": ["./prisma/client"]
 		}
 	},
 	"include": [
