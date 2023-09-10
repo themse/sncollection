@@ -1,15 +1,16 @@
 'use client';
 
+import { useEffect } from 'react';
+
 import { ProductCard } from '@/components/ProductCard';
 import { SortingPanel } from '@/components/SortingPanel';
 import { useAllSneakers } from '@/context/AllSneakersContext';
 import { useCurrentSneakers } from '@/context/CurrentSneakersContext';
-import { SneakerEntity } from '@/services/entities/Sneaker';
-import { useEffect } from 'react';
+import { ProductEntity } from '@/api/crudCrud/ProductEntity';
 import { EmptySneakers } from '../EmptySneakers';
 
 interface SneakersListProps {
-	sneakers: SneakerEntity[];
+	sneakers: ProductEntity[];
 }
 
 export const SneakersList = ({ sneakers = [] }: SneakersListProps) => {

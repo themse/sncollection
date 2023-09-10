@@ -26,9 +26,7 @@
 			"@/ui/*": ["./src/components/ui/*"],
 			"@/fonts": ["./src/styles/fonts"],
 			"@/helpers/*": ["./src/utils/helpers/*"],
-			"@/api/*": ["./src/services/api/*"],
-			"@/entities/*": ["./src/services/entities/*"],
-			"@/dbClient": ["./prisma/client"]
+			"@/api/*": ["./src/services/api/*"]
 		}
 	},
 	"include": [

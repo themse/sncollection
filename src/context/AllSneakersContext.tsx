@@ -1,27 +1,27 @@
 'use client';
 
-import { SneakerEntity } from '@/services/entities/Sneaker';
+import { ProductEntity } from '@/api/crudCrud/ProductEntity';
 import { createContext, PropsWithChildren, useContext, useState, useCallback } from 'react';
 
 type State = {
-	allSneakers: SneakerEntity[];
-	addAllSneakers: (_allSneakers: SneakerEntity[]) => void;
-	addSneakersItem: (_sneakersItem: SneakerEntity) => void;
-	onUpdateSneakersItem: (_sneakersItem: SneakerEntity) => void;
+	allSneakers: ProductEntity[];
+	addAllSneakers: (_allSneakers: ProductEntity[]) => void;
+	addSneakersItem: (_sneakersItem: ProductEntity) => void;
+	onUpdateSneakersItem: (_sneakersItem: ProductEntity) => void;
 	onDeleteSneakersItem: (_id: string) => void;
 };
 
 const AllSneakersContext = createContext<State | null>(null);
 
 export const AllSneakersProvider = ({ children }: PropsWithChildren) => {
-	const [allSneakers, setAllSneakers] = useState<SneakerEntity[]>([]);
+	const [allSneakers, setAllSneakers] = useState<ProductEntity[]>([]);
 
-	const addAllSneakers = useCallback((sneakers: SneakerEntity[]) => setAllSneakers(sneakers), []);
+	const addAllSneakers = useCallback((sneakers: ProductEntity[]) => setAllSneakers(sneakers), []);
 
-	const addSneakersItem = (sneakersItem: SneakerEntity) =>
+	const addSneakersItem = (sneakersItem: ProductEntity) =>
 		setAllSneakers((prev) => [...prev, sneakersItem]);
 
-	const onUpdateSneakersItem = (updatedItem: SneakerEntity) => {
+	const onUpdateSneakersItem = (updatedItem: ProductEntity) => {
 		setAllSneakers((prev) =>
 			prev.map((item) => (item._id === updatedItem._id ? updatedItem : item)),
 		);

@@ -13,7 +13,8 @@
 		"type:check": "tsc --pretty --noEmit",
 		"storybook": "storybook dev -p 6006",
 		"build-storybook": "storybook build",
-		"db:migrate": "prisma migrate dev"
+		"db:migrate": "prisma migrate dev",
+		"postinstall": "prisma generate"
 	},
 	"dependencies": {
 		"@prisma/client": "^5.2.0",

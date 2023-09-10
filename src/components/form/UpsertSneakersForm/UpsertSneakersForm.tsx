@@ -6,15 +6,15 @@ import * as Yup from 'yup';
 import { FormInput } from '@/components/form/FormInput';
 import { Button } from '@/components/ui/Button';
 import { PlusIcon, TrashIcon } from '@/ui/Icon';
-import { SneakerEntity } from '@/services/entities/Sneaker';
+import { ProductEntity } from '@/api/crudCrud/ProductEntity';
 import { validateForm } from '@/helpers/validateForm';
-import * as CrudCrudApi from '@/api/crudCrud';
+import { productService } from '@/api/ProductService';
 import { sneakersFormInputList } from '@/utils/consts';
 import { useDrawer } from '@/context/DrawerContext';
 import { useCurrentSneakers } from '@/context/CurrentSneakersContext';
 import { useAllSneakers } from '@/context/AllSneakersContext';
 
-type FormValues = SneakerEntity;
+type FormValues = ProductEntity;
 
 export const UpsertSneakersForm = () => {
 	const { onCloseDrawer } = useDrawer();
@@ -25,10 +25,12 @@ export const UpsertSneakersForm = () => {
 		const { _id, ...dto } = formData;
 
 		if (_id) {
-			const updatedSneakers = await CrudCrudApi.updateSneaker(_id, dto);
-			onUpdateSneakersItem(updatedSneakers);
+			// TODO fix caching
+			const _updatedSneakers = await productService.update(_id, dto);
+			onUpdateSneakersItem({ ...dto, _id });
 		} else {
-			const createdSneakers = await CrudCrudApi.addNewSneaker(dto);
+			// @ts-ignore TODO omit _id implement a separate CreateProductModel
+			const createdSneakers = await productService.create(dto);
 			addSneakersItem(createdSneakers);
 		}
 
@@ -49,7 +51,7 @@ export const UpsertSneakersForm = () => {
 	};
 
 	const onDelete = async (id: string) => {
-		await CrudCrudApi.deleteSneaker(id);
+		await productService.delete(id);
 
 		resetCurrentSneakers();
 		onDeleteSneakersItem(id);

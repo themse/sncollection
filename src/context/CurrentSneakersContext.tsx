@@ -1,20 +1,20 @@
 'use client';
 
-import { SneakerEntity } from '@/services/entities/Sneaker';
+import { ProductEntity } from '@/api/crudCrud/ProductEntity';
 import { createContext, PropsWithChildren, useContext, useState } from 'react';
 
 type State = {
-	currentSneakers: SneakerEntity | null;
-	addCurrentSneakers: (_current: SneakerEntity) => void;
+	currentSneakers: ProductEntity | null;
+	addCurrentSneakers: (_current: ProductEntity) => void;
 	resetCurrentSneakers: () => void;
 };
 
 const CurrentSneakersContext = createContext<State | null>(null);
 
 export const CurrentSneakersProvider = ({ children }: PropsWithChildren) => {
-	const [currentSneakers, setCurrentSneakers] = useState<SneakerEntity | null>(null);
+	const [currentSneakers, setCurrentSneakers] = useState<ProductEntity | null>(null);
 
-	const addCurrentSneakers = (sneakers: SneakerEntity) => setCurrentSneakers(sneakers);
+	const addCurrentSneakers = (sneakers: ProductEntity) => setCurrentSneakers(sneakers);
 
 	const resetCurrentSneakers = () => setCurrentSneakers(null);
 

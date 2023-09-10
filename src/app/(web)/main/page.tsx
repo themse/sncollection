@@ -1,8 +1,8 @@
 import { SneakersList } from '@/components/screens/SneakersList';
-import * as CrudCrudApi from '@/api/crudCrud';
+import { productService } from '@/api/ProductService';
 
 const MainPage = async () => {
-	const sneakers = await CrudCrudApi.getAllSneakers();
+	const sneakers = await productService.find();
 
 	return <SneakersList sneakers={sneakers} />;
 };

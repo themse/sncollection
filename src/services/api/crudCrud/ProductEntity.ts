@@ -1,8 +1,10 @@
-export interface SneakerEntity {
+export interface ProductEntity {
 	name: string;
 	price: number;
 	brand: string;
 	size: number;
 	year: number;
-	_id?: string;
+	isActive?: boolean;
+
+	_id: string;
 }
