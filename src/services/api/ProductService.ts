@@ -1,5 +1,4 @@
 import { ReadInterface, WriteInterface } from '@/services/interfaces/repository';
-import * as CrudCrudApi from './crudCrud/ProductRepository';
 import * as PrismaApi from './prisma/ProductRepository';
 
 interface Repository<T> extends ReadInterface<T>, WriteInterface<T> {
@@ -32,7 +31,6 @@ export class ProductService<T> {
 	}
 }
 
-const productService = new ProductService(new CrudCrudApi.ProductRepository());
-// const productService = new ProductService(new PrismaApi.ProductRepository());
+const productService = new ProductService(new PrismaApi.ProductRepository());
 
 export { productService };

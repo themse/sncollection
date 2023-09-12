@@ -1,6 +1,6 @@
 'use client';
 
-import { ProductEntity } from '@/api/crudCrud/ProductEntity';
+import { ProductEntity } from '@/services/entities/ProductEntity';
 import { createContext, PropsWithChildren, useContext, useState } from 'react';
 
 type State = {

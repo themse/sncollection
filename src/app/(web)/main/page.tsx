@@ -1,10 +1,11 @@
 import { SneakersList } from '@/components/screens/SneakersList';
-import { productService } from '@/api/ProductService';
+import { EmptySneakers } from '@/components/screens/EmptySneakers';
+import * as ProductAPI from '@/api/crudCrud';
 
 const MainPage = async () => {
-	const sneakers = await productService.find();
+	const sneakers = await ProductAPI.findAll();
 
-	return <SneakersList sneakers={sneakers} />;
+	return sneakers.length > 0 ? <SneakersList sneakers={sneakers} /> : <EmptySneakers />;
 };
 
 export default MainPage;
