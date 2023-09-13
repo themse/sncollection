@@ -1,33 +1,21 @@
 'use client';
 
-import { useMemo } from 'react';
-import { useSearchParams } from 'next/navigation';
-
 import { ProductCard } from '@/components/ProductCard';
 import { SortingPanel } from '@/components/SortingPanel';
 import { useCurrentSneakers } from '@/context/CurrentSneakersContext';
 import { ProductEntity } from '@/services/entities/ProductEntity';
+import { useFilteredProducts } from '@/hooks/useFilteredProducts';
+import { NotFoundSneakers } from '@/components/screens/NotFoundSneakers';
 
 interface SneakersListProps {
 	sneakers: ProductEntity[];
 }
 
 export const SneakersList = ({ sneakers = [] }: SneakersListProps) => {
-	const searchParams = useSearchParams();
 	const { addCurrentSneakers } = useCurrentSneakers();
+	const { filteredProducts: filteredSneakers } = useFilteredProducts(sneakers);
 
-	const filteredSneakers = useMemo(() => {
-		const searchValue = searchParams.get('search');
-		let filteredItems = sneakers;
-
-		if (searchValue) {
-			filteredItems = filteredItems.filter((item) => item.name.toLowerCase().includes(searchValue));
-		}
-
-		return filteredItems;
-	}, [sneakers, searchParams]);
-
-	return (
+	return filteredSneakers.length > 0 ? (
 		<div className="mb-10 space-y-4 pb-8 pt-4 md:mb-0 lg:py-8">
 			<SortingPanel />
 
@@ -56,5 +44,7 @@ export const SneakersList = ({ sneakers = [] }: SneakersListProps) => {
 				))}
 			</div>
 		</div>
+	) : (
+		<NotFoundSneakers />
 	);
 };
