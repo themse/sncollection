@@ -1,6 +1,8 @@
 import { redirect } from 'next/navigation';
 
-const HomePage = () => {
+import { PageProps } from '@/types/app';
+
+const HomePage = ({}: PageProps) => {
 	redirect('/create');
 };
 
