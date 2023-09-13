@@ -2,13 +2,13 @@ import type { Metadata } from 'next';
 import { PropsWithChildren } from 'react';
 
 import { Container } from '@/components/Container';
-import { SearchInput } from '@/components/SearchInput';
 import { Button } from '@/components/ui/Button';
 import { Heading } from '@/components/ui/Heading';
 import { PlusIcon } from '@/ui/Icon';
 import { DrawerTrigger } from '@/ui/Drawer';
 import { DrawerProvider } from '@/context/DrawerContext';
 import { CurrentSneakersProvider } from '@/context/CurrentSneakersContext';
+import { SearchFilter } from '@/components/SearchFilter';
 
 export const metadata: Metadata = {
 	title: 'SN Collector - Sneakers',
@@ -24,7 +24,7 @@ const MainLayout = ({ children }: PropsWithChildren) => {
 							Your collection
 						</Heading>
 						<div className="flex w-full items-center gap-x-4 md:w-fit">
-							<SearchInput wrapperClassnames="w-full md:w-fit" className="w-full md:w-fit" />
+							<SearchFilter wrapperClassnames="w-full md:w-fit" className="w-full md:w-fit" />
 							<DrawerTrigger asChild>
 								<Button
 									type="button"

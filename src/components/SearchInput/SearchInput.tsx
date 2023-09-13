@@ -2,7 +2,7 @@ import { Input, InputProps } from '@/ui/form/Input';
 import { SearchIcon } from '@/ui/Icon';
 import { cn } from '@/helpers/cn';
 
-interface SearchInputProps extends InputProps {
+export interface SearchInputProps extends InputProps {
 	wrapperClassnames?: string;
 }
 
