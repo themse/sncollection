@@ -1,6 +1,6 @@
-import { Button } from '@/ui/Button';
 import { Text } from '@/ui/Text';
 import { CalendarIcon, ChevronLeftIcon, ChevronRightIcon, DollarSignIcon } from '@/ui/Icon';
+import { SortByButton } from '@/components/SortingPanel/SortByButton';
 
 export const SortingPanel = () => {
 	return (
@@ -8,21 +8,38 @@ export const SortingPanel = () => {
 			<Text variant="secondary">Sort by:</Text>
 
 			<div className="flex flex-wrap justify-center gap-2">
-				<Button type="button" variant="secondary" isActive>
+				<SortByButton
+					sortingField="year"
+					labelOption={{
+						asc: 'Oldest Year',
+						desc: 'Newest Year',
+					}}
+				>
 					<CalendarIcon className="mr-2 h-4 w-4" />
-					Oldest Year
-				</Button>
-				<Button type="button" variant="secondary">
+				</SortByButton>
+
+				<SortByButton
+					sortingField="size"
+					labelOption={{
+						asc: 'Smallest Size',
+						desc: 'Biggest Size',
+					}}
+				>
 					<div className="mr-2 flex -space-x-2">
 						<ChevronLeftIcon className="h-4 w-4" />
 						<ChevronRightIcon className="h-4 w-4" />
 					</div>
-					Smallest Size
-				</Button>
-				<Button type="button" variant="secondary">
+				</SortByButton>
+
+				<SortByButton
+					sortingField="price"
+					labelOption={{
+						asc: 'Lowest Price',
+						desc: 'Highest Price',
+					}}
+				>
 					<DollarSignIcon className="mr-2 h-4 w-4" />
-					Lowest Price
-				</Button>
+				</SortByButton>
 			</div>
 		</div>
 	);

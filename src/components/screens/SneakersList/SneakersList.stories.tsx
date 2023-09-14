@@ -16,4 +16,9 @@ export const Template: Story = {
 	args: {
 		sneakers: mockedSneakersForStory,
 	},
+	parameters: {
+		nextjs: {
+			appDirectory: true,
+		},
+	},
 };

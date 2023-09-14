@@ -18,7 +18,7 @@ export const sortByProperty = <TData extends Record<string, any>>(
 
 	const sortOrder = order === Order.DESC ? -1 : 1;
 
-	return data.toSorted((a, b) => {
+	return [...data].sort((a, b) => {
 		if (a[property] < b[property]) {
 			return -1 * sortOrder;
 		}
