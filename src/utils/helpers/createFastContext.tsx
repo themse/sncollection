@@ -1,3 +1,5 @@
+// https://github.com/jherr/fast-react-context/blob/main/fast-context-generic/src/createFastContext.tsx
+
 import {
 	createContext,
 	useCallback,
