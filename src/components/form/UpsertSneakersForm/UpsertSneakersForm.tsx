@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect } from 'react';
 import { Form, FormProps } from 'react-final-form';
 import * as Yup from 'yup';
 
@@ -50,6 +51,12 @@ export const UpsertSneakersForm = () => {
 		resetCurrentSneakers();
 		onCloseDrawer();
 	};
+
+	useEffect(() => {
+		return () => {
+			resetCurrentSneakers();
+		};
+	});
 
 	return (
 		<Form<FormValues>

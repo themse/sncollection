@@ -1,38 +1,30 @@
 'use client';
 
 import { ProductEntity } from '@/services/entities/ProductEntity';
-import { createContext, PropsWithChildren, useContext, useState } from 'react';
+import createFastContext from '@/helpers/createFastContext';
+import { useCallback } from 'react';
 
-type State = {
+const { FastContextProvider, useStore } = createFastContext<{
 	currentSneakers: ProductEntity | null;
-	addCurrentSneakers: (_current: ProductEntity) => void;
-	resetCurrentSneakers: () => void;
-};
+}>({
+	currentSneakers: null,
+});
 
-const CurrentSneakersContext = createContext<State | null>(null);
+const useCurrentSneakers = () => {
+	const [currentSneakers, setStore] = useStore((store) => store.currentSneakers);
 
-export const CurrentSneakersProvider = ({ children }: PropsWithChildren) => {
-	const [currentSneakers, setCurrentSneakers] = useState<ProductEntity | null>(null);
-
-	const addCurrentSneakers = (sneakers: ProductEntity) => setCurrentSneakers(sneakers);
-
-	const resetCurrentSneakers = () => setCurrentSneakers(null);
-
-	return (
-		<CurrentSneakersContext.Provider
-			value={{ currentSneakers, addCurrentSneakers, resetCurrentSneakers }}
-		>
-			{children}
-		</CurrentSneakersContext.Provider>
+	const addCurrentSneakers = useCallback(
+		(sneakers: ProductEntity) => setStore({ currentSneakers: sneakers }),
+		[setStore],
 	);
+
+	const resetCurrentSneakers = useCallback(() => setStore({ currentSneakers: null }), [setStore]);
+
+	return {
+		currentSneakers,
+		addCurrentSneakers,
+		resetCurrentSneakers,
+	};
 };
 
-export const useCurrentSneakers = (): State | never => {
-	const state = useContext(CurrentSneakersContext);
-
-	if (!state) {
-		throw new Error('useCurrentSneakers is used only within CurrentSneakersProvider');
-	}
-
-	return state;
-};
+export { useCurrentSneakers, FastContextProvider as CurrentSneakersProvider };
